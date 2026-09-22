@@ -1,0 +1,22 @@
+name: k6 Load Test
+
+on:
+  workflow_dispatch:   # Se puede disparar manualmente
+  push:
+    branches: [ main ]
+
+jobs:
+  k6-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup k6
+        uses: grafana/setup-k6-action@v1
+
+      - name: Run k6 test
+        uses: grafana/run-k6-action@v1
+        with:
+          path: script.js
+          flags: --vus 20 --duration 30s   # versión liviana para CI
