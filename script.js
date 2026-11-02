@@ -7,7 +7,7 @@ export let options = {
 };
 
 export default function () {
-  const res = http.get('https://megatickets-cliente.com/comprar');
+  const res = http.get('https://ididu-commits.github.io/Proyecto-Testing/');
 
   check(res, {
     'status es 200': (r) => r.status === 200,
