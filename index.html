@@ -2,11 +2,178 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>MegaTickets - Prueba</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MegaTickets – Comprar entradas</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #0f1221;
+      color: #e8eaf0;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(135deg, #1a1f3b, #2a1458);
+      border-bottom: 1px solid #3d2a6d;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      color: #fff;
+    }
+    .logo span { color: #a78bfa; }
+    nav { display: flex; gap: 18px; font-size: 0.95rem; color: #c4b5fd; }
+    nav a { color: inherit; text-decoration: none; }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+    .hero {
+      background: linear-gradient(160deg, #251b4a, #1a1f3b 60%);
+      border: 1px solid #3d2a6d;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .badge {
+      display: inline-block;
+      background: #7c3aed;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .subtitle { color: #c4b5fd; margin-bottom: 18px; }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      color: #b8b4d4;
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+    }
+    .meta strong { color: #e8eaf0; }
+    .btn {
+      display: inline-block;
+      background: #8b5cf6;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover { background: #7c3aed; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .card {
+      background: #171b31;
+      border: 1px solid #2e3358;
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .card p { color: #a9a6c3; font-size: 0.92rem; }
+    .price {
+      margin-top: 12px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #c4b5fd;
+    }
+    .status-box {
+      background: #10261a;
+      border: 1px solid #1f6b3f;
+      border-radius: 12px;
+      padding: 16px 18px;
+      color: #86efac;
+      font-size: 0.95rem;
+    }
+    .status-box strong { color: #bbf7d0; }
+    footer {
+      text-align: center;
+      color: #7d789c;
+      font-size: 0.85rem;
+      padding: 18px;
+      border-top: 1px solid #2e3358;
+    }
+  </style>
 </head>
 <body>
-  <h1>MegaTickets</h1>
-  <p>Endpoint de prueba para carga con k6.</p>
-  <p>Status: OK</p>
+  <header>
+    <div class="logo">Mega<span>Tickets</span></div>
+    <nav>
+      <a href="#">Eventos</a>
+      <a href="#">Mi cuenta</a>
+      <a href="#">Ayuda</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">Preventa</div>
+      <h1>Noche de Estrellas 2026</h1>
+      <p class="subtitle">Estadio Único · Buenos Aires</p>
+      <div class="meta">
+        <div><strong>Fecha:</strong> 15 de diciembre</div>
+        <div><strong>Hora:</strong> 21:00</div>
+        <div><strong>Disponibilidad:</strong> Limitada</div>
+      </div>
+      <a class="btn" href="#comprar">Comprar entradas</a>
+    </section>
+
+    <section class="grid" id="comprar">
+      <article class="card">
+        <h3>Platea baja</h3>
+        <p>Vista cercana al escenario. Acceso prioritario.</p>
+        <div class="price">$45.000</div>
+      </article>
+      <article class="card">
+        <h3>Platea alta</h3>
+        <p>Buena vista general. Ideal para grupos.</p>
+        <div class="price">$28.000</div>
+      </article>
+      <article class="card">
+        <h3>Campo</h3>
+        <p>Experiencia de pie. Últimas unidades.</p>
+        <div class="price">$18.000</div>
+      </article>
+    </section>
+
+    <div class="status-box">
+      <strong>Status:</strong> OK · Endpoint de prueba para carga con k6 · BlackBox Testers
+    </div>
+  </main>
+
+  <footer>
+    MegaTickets · Página de prueba para Performance Testing · UPE
+  </footer>
 </body>
 </html>
